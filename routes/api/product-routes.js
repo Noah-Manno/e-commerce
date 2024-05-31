@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
     if (!productData) {
       return res.status(404).json({ error: 'products not found' })
     }
+    res.status(200).json(productData)
   } catch (error) {
     res.status(500).json({ error: 'Failed GET request for All Products' });
   }
@@ -45,6 +46,7 @@ router.get('/:id', async (req, res) => {
     if (!productData) {
       return res.status(404).json({ error: 'product not found' })
     }
+    res.status(200).json(productData)
   } catch (error) {
     res.status(500).json({ error: 'Failed GET request for 1 Product' });
   }
